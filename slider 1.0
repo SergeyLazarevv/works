@@ -1,1 +1,37 @@
-
+<div class="slide__block">
+  <div class="slide__item show" id="slide__item">
+    <h4 class="slide__title showTitle">Sochi</h4>
+    <p class="slide__text showTitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, nobis!</p>
+  </div>
+  <div class="slide__item">
+    <h4 class="slide__title">
+Abkhazia</h4>
+    <p class="slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, nobis!</p>
+  </div>
+  <div class="slide__item">
+    <h4 class="slide__title">Moscow</h4>
+    <p class="slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, nobis!</p>
+  </div>
+  <div class="slide__item"><h4 class="slide__title">Saint Petersburg</h4>
+    <p class="slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, nobis!</p></div>
+  <div class="slide__item"><h4 class="slide__title">Samara</h4>
+    <p class="slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, nobis!</p></div>
+  <div class="slide__item"><h4 class="slide__title">Rose peak 2320</h4>
+    <p class="slide__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. At, nobis!</p></div>
+  <div class="slide__left_Btn" id="slide__left_Btn" onclick=slideL()>
+    <img src="https://img.icons8.com/ios/50/000000/circled-chevron-left.png">
+  </div>
+  <div class="slide__right_Btn" id="slide__right_Btn" onclick=slideR()>
+    <img src="https://img.icons8.com/ios/50/000000/circled-chevron-right.png">
+  </div>
+  <div class="dot__block">
+    <div class="dot__item_wrap">
+      <div class="dot__item active" onclick=dotTabs(0)></div>
+      <div class="dot__item" onclick=dotTabs(1)></div>
+      <div class="dot__item" onclick=dotTabs(2)></div>
+      <div class="dot__item" onclick=dotTabs(3)></div>
+      <div class="dot__item" onclick=dotTabs(4)></div>
+      <div class="dot__item" onclick=dotTabs(5)></div>
+   </div>
+  </div>
+</div>
