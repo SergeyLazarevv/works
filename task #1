@@ -1,0 +1,24 @@
+//find sum of all numbers between function arguments 'a' and 'b'
+
+function GetSum( a,b ) {
+   if (a == b) return a;
+   let from,
+       to
+   if (a > b) {
+     from = b
+     to = a
+   } else {
+     from = a
+     to = b
+   }
+   let numArr = [];
+   while (from <= to) {
+     numArr.push(from)
+     ++from
+   }
+  var result = numArr.reduce(function(sum,item){
+    return sum + item
+  })
+  return result
+   
+}
