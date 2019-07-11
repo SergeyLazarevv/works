@@ -1,0 +1,9 @@
+//find unique number in array
+
+function stray (arr) {
+  const store = arr.reduce((acc, cur) => {
+    !acc[cur] ? acc[cur] = 1 : acc[cur]++
+    return acc
+  }, {})
+  return +Object.keys(store).filter(key => store[key] === 1)
+}
