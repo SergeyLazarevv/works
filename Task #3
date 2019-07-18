@@ -1,0 +1,25 @@
+function (str){
+    let strLength = str.length
+    let firstArr = [],
+        secondArr = [],
+        result
+    for (i=0;i<strLength/2;i++){
+      firstArr.push(str[i])
+    }
+    for (i=strLength-1;i>=strLength/2;i--) {
+      secondArr.push(str[i])
+    }
+      let changeFirstArr = []
+      firstArr.forEach((item) => {
+        item == '[' && changeFirstArr.push(']')
+        item == '{' && changeFirstArr.push('}')
+        item == '(' && changeFirstArr.push(')')
+        item == '<' && changeFirstArr.push('>')
+      })
+
+      changeFirstArr = changeFirstArr.join('')
+      secondArr = secondArr.join('')
+
+      changeFirstArr === secondArr ? result = true : result = false
+      return result 
+    }
