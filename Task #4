@@ -1,0 +1,21 @@
+function GetSum(a,b) {
+	let arr = []
+	  if (a == b) {
+	  return a
+  } else {
+	  if (a < b) {
+		  for (i=a;i<=b;i++) {
+		  	arr.push(i)
+	  	  }
+	  } else {
+		  for (i=a;i>=b;i--) {
+		  	arr.push(i)
+	  	  }
+	  }
+	  
+  }
+	let result = arr.reduce((sum,current) => {
+		return sum+current
+	})
+	return result
+}
