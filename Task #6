@@ -1,0 +1,4 @@
+function unusualFive() {
+  let arr = [,,,,,'F']
+  return arr.indexOf('F')
+}
