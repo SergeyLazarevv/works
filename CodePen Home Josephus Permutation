@@ -1,0 +1,19 @@
+function josephusSurvivor(n,k){
+  let manArr   = [],
+      results   = [],
+      i     = 0,
+      count   = 0
+  for (let i=1;i<=n;i++) {
+    manArr.push(i)
+  }
+  while (manArr.length > 0) {
+    i = i % manArr.length;
+    if (++count === k) {
+      results.push(manArr.splice(i, 1)[0])
+      i--
+      count = 0
+    }
+    i++
+  }
+  return results.pop()
+}
