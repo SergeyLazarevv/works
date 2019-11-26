@@ -1,0 +1,16 @@
+function partsSums(ls) {
+  const result = [0]
+  ls.reverse().reduce((sum,num) => {
+    result.push(sum+num) 
+    return sum+num
+  },0)
+  return result.reverse()
+}
+
+/////////////////////////////////////OR
+
+function partsSums(ls) {
+    ls.unshift(0);
+    let sum = ls.reduce((p, c) => p + c, 0);
+    return ls.map(v => sum = sum - v);
+}
