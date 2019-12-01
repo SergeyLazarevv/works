@@ -1,0 +1,22 @@
+function sqInRect(lng, wdth){
+  if (lng == wdth || lng == 0 || wdth == 0 || lng === 'undefined' || wdth === 'undefind') return null
+  let result = [];
+  recurs()
+  function recurs() {
+    if (lng > wdth) {
+    result.push(wdth)
+    lng -=wdth
+    recurs()
+  } else if (lng < wdth) {
+    result.push(lng)
+    wdth -=lng
+    recurs()
+  } else if(lng == wdth) {
+    result.push(lng)
+  }
+  }
+  return result
+}
+console.log(sqInRect(20,14))
+
+///////////////////////////////////////
