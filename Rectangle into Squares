@@ -1,5 +1,5 @@
 function sqInRect(lng, wdth){
-  if (lng == wdth || lng == 0 || wdth == 0 || lng === 'undefined' || wdth === 'undefind') return null
+  if (lng == wdth || lng == 0 || wdth == 0 || lng === undefined || wdth === undefind) return null
   let result = [];
   recurs()
   function recurs() {
