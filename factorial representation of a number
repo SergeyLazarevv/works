@@ -1,0 +1,10 @@
+function dec2FactString(nb) {
+  let result  = [],
+      i       = 1
+  do {
+    result.push(nb%i)
+    nb = Math.floor(nb / i)
+    i++
+  } while (nb > 1)
+  return result.reverse().join('')
+}
