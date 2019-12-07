@@ -1,0 +1,23 @@
+function dec2FactString(nb) {
+  let result  = [],
+  i       = 1
+  do {
+    nb%i < 10 ? result.push(nb%i) : result.push('A')
+    nb = Math.floor(nb / i)
+    i++
+  } while (nb > 0)
+  return result.reverse().join('')
+}
+
+function factString2Dec(str) {
+  let result = [], 
+  arr = str.split('').reverse()
+  arr.forEach((item,index) => {
+  isNaN(item) ? result.push(10*factorial(index)) :
+                result.push(item*factorial(index))
+  })
+  function factorial(n) {
+    return n != 0 ? (n != 1) ? n * factorial(n - 1) : 1 : 0
+  }
+  return result.reduce((sum,item) => sum+item)
+ }
