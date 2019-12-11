@@ -1,0 +1,15 @@
+function tickets(peopleInLine){
+  let result = "YES"
+    peopleInLine.reduce((sum,price) => {
+    if (price === 100) {
+      sum['25']-=1 
+      sum['50'] != 0 ? sum['50']-=1 : sum['25']-=2
+    } else if (price==50){
+      sum['25']-=1
+    }
+      for (key in sum) {if (sum[key] < 0) result = 'NO'}
+    sum[price]+=1
+    return sum
+      },{'25':0,'50':0,'100':0})
+  return result
+}
