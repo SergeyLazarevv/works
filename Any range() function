@@ -3,11 +3,7 @@ function range(start, end, step) {
   if (arguments.length === 2) return range(start, end, 1)
   const result = []
   if (start > end) return []
-  if (step==0) {
-	 for (let i = start; result.length<=end-start-1;) {result.push(i)}  
-  } else {
-	 for (let i = start; i <= end-1; i += step) {result.push(i)}
-  }
+  for (let i = start; step==0 ? result.length<=end-start-1 : i <= end-1; i += step) {result.push(i)}
   return result
 }
 	
