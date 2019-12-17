@@ -1,0 +1,20 @@
+function bears(x, s){
+	let res=[]
+	for (i=0;i<s.length;i++) {
+		if (s[i] == 'B' && s[i+1]=='8') {
+			res.push('B8')
+			++i
+		} else if (s[i] == '8' && s[i+1]=='B') {
+			res.push('8B')
+			++i
+		}
+	}
+	return [res.join(''),Math.ceil(res.length)>=x]
+}
+
+//////////////////////////////////////////////////
+
+function bears(x, s){
+  var pairs = s.match(/(8B)|(B8)/g) || [];
+  return [pairs.join(""), pairs.length >= x];
+}
