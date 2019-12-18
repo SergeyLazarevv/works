@@ -1,0 +1,12 @@
+let search = 620;
+let arr = [6, 220, 618, 648, 862, 1076, 1290, 1504, 1718, 1932];
+
+
+let findMaxSimularNumber = (num,arr) => {
+	let a = arr.filter(cur => cur > search)[0]  
+	let b = arr.filter(cur => cur < search).reverse()[0]
+	if (num - b <= a - num) return b
+	return a
+}
+
+//618
