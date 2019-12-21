@@ -1,0 +1,37 @@
+// The function that accepts an array of intervals, and returns the sum of all the interval lengths. 
+// Overlapping intervals should only be counted once.
+
+// arr=[[1,2],[6, 10],[11, 15]] => 9
+// arr=[[1,5],[10, 20],[1, 6],[16, 19],[5, 11]] => 19
+
+function sumIntervals(arr) {
+  let end;
+  arr.sort((a,b)=>a[0]-b[0])
+  return arr.reduce((sum,item,index)=>{
+      if (index == 0) {
+          sum+=item[1]-item[0]
+          end=item[1]
+      }
+      if (item[0]>end)    {
+          sum+=item[1]-item[0]
+          end=item[1]
+      }
+      if (item[0]<=end && item[1]>end) {
+          sum+=item[1]-end
+          end=item[1]
+      } 
+      return sum
+    } 
+  };
+
+////////////////////////////////////////
+
+function sumIntervals(intervals){
+  var numbers = {};
+  intervals.forEach(function(x) {
+    for (var i = x[0]; i < x[1]; i++) {
+      numbers[i] = i;
+    }
+  });
+  return Object.keys(numbers).length;
+}
