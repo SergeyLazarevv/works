@@ -15,3 +15,31 @@ function subtraction(max, min) {
                    .join('')
                    .replace(/^0+/, '');
   }
+
+////////// sum //////////
+
+function sumStrings(a,b) {
+  let result = [];
+  let mind = 0;
+  let arr = [...arguments].map(a => [...a + ""].reverse());
+  let length = arr.reduce((s, a) => s > a.length ? s : a.length, 0);
+  for (let i = 0; i < length; i++) {
+    let digits = arr.map(num => (+num[i]) | 0);
+    let value = digits.reduce((sum, digit) => digit + sum, 0) + mind;
+    mind = value / 10 | 0;
+    result.push((value % 10) + "");
+  }
+	let out= ((mind || "") + result.reverse().join("")) || 0;
+	function zeroDel(out){
+		let r=out
+		for(i=0;i<out.length;i++){
+			if (out[i]==='0') {
+				r=out.substring(i+1)
+				zeroDel(r)
+			}
+			break
+		}
+		return r
+	}
+  return zeroDel(out)
+}
