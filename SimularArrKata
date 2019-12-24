@@ -1,0 +1,12 @@
+Array.prototype.sameStructureAs = function(other) {
+	if (this.length!=other.length) return false
+	if (!Array.isArray(other)) return false
+	for(i=0;i<this.length;i++){
+		if (Array.isArray(this[i]) && Array.isArray(other[i])) {
+			this[i].sameStructureAs(other[i])
+		}
+		if (Array.isArray(this[i]) == Array.isArray(other[i])) continue
+		else return false
+	}
+	return true
+};
