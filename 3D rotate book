@@ -1,0 +1,119 @@
+// HTML
+
+<div class="wrap">
+  <div id="book" onkeydown='rotate(event)'>
+    <div class="front side"></div>
+    <div class="top side"></div>
+    <div class="bottom side"></div>
+    <div class="left side">
+      <p class='leftSide_title'>Maintainable JavaScript</p>
+      
+    </div>
+    <div class="back side">
+      <div class="back_title">JS. Mainainable</div>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit tenetur tempora, nam explicabo eum amet sint enim excepturi quas velit repudiandae nostrum nobis? Dolorum?</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora recusandae molestiae maxime.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt cum excepturi aut quae unde, error placeat dolor aspernatur voluptatibus veritatis!</p>
+    </div>
+    <div class="right side"></div>
+  </div>
+</div>
+
+//CSS
+
+.wrap {
+  perspective: 1000px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#book {
+  width: 220px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  position: relative;
+  transform: rotateX(20deg) rotateY(30deg);
+}
+#book:hover {
+  cursor: pointer;
+}
+.side {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  color: white;
+}
+.front {
+  background: url(https://wcbook.ru/data/book/37/371638.jpg) center center;
+  background-size: cover;
+  transform: translateZ(50px);
+}
+.left {
+  background-color: rgb(0,160,160);
+  transform: rotateY(-90deg) translateZ(25px) translateX(25px);
+  width: 50px;
+}
+.right {
+  background-color: #fafafa;
+  transform: rotateY(90deg) translateZ(195px) translateX(-25px);
+  width: 50px;
+  box-shadow: inset 0px 9px 18px 3px rgba(0,0,0,.2);
+}
+.top {
+  background-color: #fafafa;
+  box-shadow: inset 9px 0px 13px 4px rgba(0,0,0,.2);
+  width: 220px;
+  height: 50px;
+  transform:rotateX(90deg) translateX(0px) translateZ(25px) translateY(25px)
+}
+.bottom {
+  background-color: #fafafa;
+  width: 220px;
+  height: 50px;
+  transform:rotateX(90deg) translateZ(-275px) translateY(25px);
+  box-shadow: inset 9px 0px 13px 4px rgba(0,0,0,.2);
+}
+.back {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  font-size: 10px;
+  transform: rotateY(-180deg);
+  padding: 20px;
+  box-sizing: border-box;
+}
+.leftSide_title {
+  transform: rotate(90deg) translateY(135px);
+}
+.back_title {
+  background-color: rgb(0,160,160);
+  border-radius: 40px 0;
+  padding: 20px 45px;
+  color: white;
+  font-size: 20px;
+  text-align: left;
+}
+
+// JS
+
+let x = 20
+let y = 30
+let book = document.getElementById('book');
+const rotate = (event) => {
+  //down
+  if(event.keyCode == 37) y-=5
+  //right
+  if(event.keyCode == 39) y+=5
+  //top
+  if(event.keyCode == 38) x+=5
+  //bottom
+  if(event.keyCode == 40) x-=5
+  book.style.transform=`rotateX(${x}deg) rotateY(${y}deg)`
+}
+document.addEventListener('keydown',(event)=>{
+  rotate(event)
+})
